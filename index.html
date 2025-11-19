@@ -1,198 +1,199 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flipbook – Bharatiyata vs Elite (20-Page Summary)</title>
+<title>Bharatiyata vs Elite — 20 Page Flipbook Summary</title>
 
 <style>
-    body {
-        margin:0;
-        font-family: Georgia, serif;
-        background:#e8e8e8;
-    }
-    .book {
-        width: 90%;
-        max-width: 820px;
-        height: 600px;
-        margin: 40px auto;
-        position: relative;
-        perspective: 2000px;
-    }
-    .page {
-        width: 100%;
-        height: 100%;
-        background: white;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform-origin: left;
-        transition: transform 1s;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        padding: 30px;
-        overflow-y: auto;
-    }
-    .page img {
-        width:100%;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-    .page h2 {
-        margin-top:0;
-        color:#222;
-    }
-    .page.flipped {
-        transform: rotateY(-180deg);
-    }
-    .controls {
-        text-align:center;
-        margin-top:20px;
-    }
-    button {
-        padding:10px 20px;
-        font-size:16px;
-        background:#444;
-        color:white;
-        border:none;
-        border-radius:5px;
-        margin: 5px;
-    }
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#e8e8e8;
+}
 
-    /* Ad Box */
-    .adbox {
-        width:100%;
-        height:120px;
-        background:#ddd;
-        border:2px dashed #777;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-        font-size:14px;
-        margin:20px 0;
-    }
+/* Book container */
+.book{
+    width:90%;
+    max-width:820px;
+    height:600px;
+    margin:40px auto;
+    background:white;
+    position:relative;
+    perspective:2000px;
+}
+
+/* Page */
+.page{
+    width:100%;
+    height:100%;
+    padding:25px;
+    box-sizing:border-box;
+    background:white;
+    position:absolute;
+    top:0;
+    left:0;
+    transition:transform 0.8s;
+    backface-visibility:hidden;
+    border:1px solid #ddd;
+}
+
+/* Flipped page */
+.page.flipped{
+    transform:rotateY(-180deg);
+}
+
+/* Controls */
+.controls{
+    text-align:center;
+    margin-bottom:20px;
+}
+.controls button{
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    background:#222;
+    color:white;
+    margin:5px;
+    border-radius:6px;
+}
+
+h2{
+    margin-top:0;
+}
+
+.ad-box{
+    width:100%;
+    text-align:center;
+    margin:20px 0;
+    padding:10px;
+    border:1px dashed #aaa;
+    background:#fafafa;
+    color:#444;
+    font-size:14px;
+}
+
+/* Sticky Ad */
+#ad-sticky{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#333;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="book" id="book">
-
-    <!-- PAGE 1 – COVER + TOP AD -->
-    <div class="page">
-        <img src="cover.jpg" alt="Book Cover Placeholder">
-        <h2>भारतीयता बनाम सत्ता–एलीट</h2>
-        <p><strong>Author:</strong> Ajay Singh Chouhan<br>
-           <strong>Co-Author:</strong> ChatGPT (OpenAI)<br>
-           <strong>Publisher:</strong> GBSB4U, Bhopal</p>
-
-        <!-- TOP AD -->
-        <div class="adbox">
-            <p>Ad Slot 1 (Top Banner)<br>728×90 / 320×50</p>
-        </div>
-    </div>
-
-    <!-- PAGE 2 – Constitution Image -->
-    <div class="page">
-        <h2>Constituent Assembly</h2>
-        <img src="assembly.jpg">
-        <p>सत्ता-एलीट विचारधारा वाली सभा का चित्र — symbolic representation.</p>
-    </div>
-
-    <!-- PAGE 3 – Group Photo -->
-    <div class="page">
-        <h2>Elite Group Representation</h2>
-        <img src="group.jpg">
-        <p>यह चित्र सत्ता-एलीट के मानसिक ढाँचे का प्रतीकात्मक समूह-प्रदर्शन है।</p>
-    </div>
-
-    <!-- PAGES 4–19 (Summary 20 pages) -->
-    <!-- Each page auto-filled as summary sections -->
-    <!-- You can replace text later with full novel -->
-
-    <!-- Example page template -->
-    <script>
-        const summaryPages = [
-            "प्रस्तावना — भारत की छिपी हुई कहानी...",
-            "अध्याय 1 — संविधान सभा की सुबह...",
-            "अध्याय 2 — सत्ता की चुप्पी...",
-            "अध्याय 3 — आदिवासी अधिकारों का सच...",
-            "अध्याय 4 — भारत माता पर बहस...",
-            "अध्याय 5 — सत्ता का मौन...",
-            "अध्याय 6 — नागेश की पुकार...",
-            "अध्याय 7 — सरदार पटेल का दर्द...",
-            "अध्याय 8 — आज़ाद और नेहरू का संघर्ष...",
-            "अध्याय 9 — एलीट की मानसिकता...",
-            "अध्याय 10 — जनता बनाम सत्ता...",
-            "अध्याय 11 — औपनिवेशिक संरचना...",
-            "अध्याय 12 — भारतीयता का दमन...",
-            "अध्याय 13 — राष्ट्रवाद की नई परिभाषा...",
-            "अध्याय 14 — लोकतंत्र के भ्रम...",
-            "अध्याय 15 — जनता का इतिहास...",
-            "अध्याय 16 — सत्ता-केंद्रित राजनीति...",
-            "अध्याय 17 — भविष्य का भारत...",
-            "अध्याय 18 — समाधान की राह..."
-        ];
-    </script>
-
-    <script>
-        const book = document.getElementById("book");
-
-        summaryPages.forEach((text, i)=>{
-            let page = document.createElement("div");
-            page.className = "page";
-            page.innerHTML = `<h2>Page ${i+4}</h2><p>${text}</p>`;
-            book.appendChild(page);
-        });
-    </script>
-
-    <!-- PAGE 20 – LAST PAGE + LAST AD -->
-    <div class="page">
-        <h2>समाप्ति — नई शुरुआत</h2>
-        <p>यह 20-Page Summary केवल प्रारंभिक ड्राफ़्ट है।  
-        Full Novel लगभग 300-Pages में तैयार होगा।</p>
-
-        <!-- LAST AD -->
-        <div class="adbox">
-            <p>Ad Slot 3 (End Page)<br>728×90 / 320×50</p>
-        </div>
-    </div>
-
+<!-- TOP AD  -->
+<div id="ad-top" class="ad-box">
+    <!-- आपके Adsterra DIRECT LINK यहाँ आयेगा -->
+    <a href="https://www.effectivegatecpm.com/bii8c91vpv?key=539c46c4bf5fa16671fd6638601fa4d4" target="_blank">
+        🔷 Ad — Click here
+    </a>
 </div>
 
-<!-- Navigation Buttons -->
 <div class="controls">
     <button onclick="prevPage()">⬅ पिछला</button>
     <button onclick="nextPage()">अगला ➡</button>
 </div>
 
+<div class="book" id="book">
+
+    <!-- ⭐ PAGE 1 — COVER IMAGE -->
+    <div class="page">
+        <h2>भारतीयता बनाम सत्ता-एलीट</h2>
+        <p><strong>20 Page Summary Flipbook</strong></p>
+        <img src="images/cover.jpg" width="100%">
+        <p>Author: Ajay Singh Chouhan</p>
+        <p>Publisher: GBSB4U Political Publications</p>
+    </div>
+
+    <!-- ⭐ PAGE 2 — Summary Start -->
+    <div class="page">
+        <h2>प्रस्तावना</h2>
+        <p>भारत का वास्तविक संघर्ष भारतीयता और सत्ता-एलीट मानसिकता के बीच है…</p>
+
+        <!-- INLINE AD -->
+        <div id="ad-inline" class="ad-box">
+            <a href="https://www.effectivegatecpm.com/vpuf2y8c?key=8756b7c91f8e013c0e9378334995d411" target="_blank">
+                🔶 Inline Ad — Click
+            </a>
+        </div>
+    </div>
+
+    <!-- ⭐ PAGE 3–20 (SUMMARY SPLIT INTO 20 PAGES) -->
+    <!-- मैं पेज छोटे रख रहा हूँ ताकि आपके Flipbook में ठीक से दिखें -->
+
+    <div class="page"><h2>Page 3</h2><p>आरव और व्यास का संवाद — सत्ता बनाम सत्य…</p></div>
+    <div class="page"><h2>Page 4</h2><p>संविधान सभा की संरचना — एलीट वर्चस्व…</p></div>
+    <div class="page"><h2>Page 5</h2><p>आदिवासी प्रतिनिधियों की उपेक्षा…</p></div>
+    <div class="page"><h2>Page 6</h2><p>भारत माता और वंदे मातरम पर चुप्पी…</p></div>
+    <div class="page"><h2>Page 7</h2><p>नागेश का विद्रोही प्रश्न…</p></div>
+    <div class="page"><h2>Page 8</h2><p>नेहरू का सत्ता मार्ग बनाम क्रांति मार्ग…</p></div>
+    <div class="page">
+        <h2>Page 9</h2>
+        <img src="images/assembly.jpg" width="100%">
+        <p>संविधान सभा के काल्पनिक चित्रण…</p>
+    </div>
+    <div class="page"><h2>Page 10</h2><p>सरदार पटेल की उपेक्षा…</p></div>
+    <div class="page"><h2>Page 11</h2><p>चंद्रशेखर आज़ाद वाली घटना…</p></div>
+    <div class="page"><h2>Page 12</h2><p>ब्रिटिश-सत्ता गठजोड़…</p></div>
+    <div class="page"><h2>Page 13</h2><p>वन कानून और आदिवासी अधिकार…</p></div>
+    <div class="page"><h2>Page 14</h2><p>स्वतंत्रता के बाद सत्ता-केंद्रित राजनीति…</p></div>
+    <div class="page"><h2>Page 15</h2><p>भारतीयता का दमन — शिक्षा, मीडिया…</p></div>
+    <div class="page"><h2>Page 16</h2><p>भारतीय सभ्यता का नींव मॉडल…</p></div>
+    <div class="page">
+        <h2>Page 17</h2>
+        <img src="images/group.jpg" width="100%">
+        <p>एलीट समूह का समूह-चित्र</p>
+    </div>
+    <div class="page"><h2>Page 18</h2><p>आरव का जागरण — सत्य की खोज…</p></div>
+    <div class="page"><h2>Page 19</h2><p>नागेश का संदेश — “भारत बचाओ”…</p></div>
+    <div class="page"><h2>Page 20</h2><p>अंतिम संदेश — वास्तविक भारतीयता का पुनर्जागरण…</p></div>
+
+</div>
+
+<!-- STICKY BOTTOM AD -->
+<div id="ad-sticky">
+    <a href="https://www.effectivegatecpm.com/cxiqhqkh?key=5e8c8ff560b1754250a8225f8956b07f" 
+       style="color:white;" target="_blank">
+        ⚫ Sponsored Link — Click Here
+    </a>
+</div>
+
 <script>
-    let pages = document.querySelectorAll(".page");
-    let current = 0;
+let pages = document.querySelectorAll(".page");
+let current = 0;
 
-    function showPage(i){
-        pages.forEach((p, index)=>{
-            p.classList.remove("flipped");
-            if(index < i){
-                p.classList.add("flipped");
-            }
-        });
-    }
+function showPage(i){
+    pages.forEach((p, index)=>{
+        p.classList.remove("flipped");
+        if(index < i){
+            p.classList.add("flipped");
+        }
+    });
+}
 
-    function nextPage(){
-        if(current < pages.length){
-            current++;
-            showPage(current);
-        }
+function nextPage(){
+    if(current < pages.length){
+        current++;
+        showPage(current);
     }
-    function prevPage(){
-        if(current > 0){
-            current--;
-            showPage(current);
-        }
+}
+
+function prevPage(){
+    if(current > 0){
+        current--;
+        showPage(current);
     }
+}
 </script>
 
 </body>
-  </html>
+</html>
